@@ -28,7 +28,7 @@ int printColorMap() {
         for(j = 0; j < 5; j++)
 		{
 			
-			colorpair[ColorPairIdx].Number = i * 5 + j;
+			colorpair[ColorPairIdx].Num = i * 5 + j;
 			strcpy(colorpair[ColorPairIdx].MajorColor , majorColor[i]);
 			strcpy(colorpair[ColorPairIdx].MinorColor , minorColor[i]);
 			PrintOnConsole(i,j);	
