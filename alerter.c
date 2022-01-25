@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#define THRESHOLD 200
+#define THRESHOLD 190
 
 int alertFailureCount = 0;
 
