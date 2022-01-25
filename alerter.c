@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#define THRESHOLD = 200
 
 int alertFailureCount = 0;
 
@@ -8,11 +9,20 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    return 200;
+    if(celcius<THRESHOLD)
+    {
+      return 200;
+    }
+    else
+    {
+      return 500;
+    }
 }
-
-void alertInCelcius(float farenheit) {
+float convertFarenheitToCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
+    return celcius;
+}
+void alertInCelcius(float farenheit) {
     int returnCode = networkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -26,6 +36,8 @@ void alertInCelcius(float farenheit) {
 int main() {
     alertInCelcius(400.5);
     alertInCelcius(303.6);
+    alertInCelcius(600);
+    alertInCelcius(620);
     assert(alertFailureCount == 3);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
