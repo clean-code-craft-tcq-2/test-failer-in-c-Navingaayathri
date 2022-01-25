@@ -14,6 +14,7 @@ char size(int cms) {
 }
 
 int main() {
+    assert(sizeName != '\0');
     assert(size(37) == 'S');
     assert(size(40) == 'M');
     assert(size(43) == 'L');
