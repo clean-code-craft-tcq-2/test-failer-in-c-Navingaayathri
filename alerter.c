@@ -51,14 +51,3 @@ int main() {
     printf("All is well (Yes it is! :> )\n");
     return 0;
 }
-
-int main() {
-    alertInCelcius(400.5);
-    alertInCelcius(303.6);
-    alertInCelcius(600);
-    alertInCelcius(620);
-    assert(alertFailureCount == 3);
-    printf("%d alerts failed.\n", alertFailureCount);
-    printf("All is well (maybe!)\n");
-    return 0;
-}
