@@ -15,24 +15,25 @@ struct Colorpair
 
 Colorpair colorpair[25];
 
-void PrintOnConsole( int i, int j)
+void printOnConsole(int ColorPairArrayIndex, char *majorColor, char *minorColor)
 {
-printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+printf("%d | %s | %s\n", ColorPairArrayIndex, majorColor, minorColor);
 }
 
 int printColorMap() {
     
-    int i = 0, j = 0, ColorPairIdx=0;
+    int i = 0, j = 0, ColorPairIdx=1;
     for(i = 0; i < 5; i++) 
 	{
         for(j = 0; j < 5; j++)
 		{
 			
-			colorpair[ColorPairIdx].Num = i * 5 + j;
+			colorpair[ColorPairIdx].Num = ColorPairIdx;
 			strcpy(colorpair[ColorPairIdx].MajorColor , majorColor[i]);
 			strcpy(colorpair[ColorPairIdx].MinorColor , minorColor[j]);
-			PrintOnConsole(i,j);	
-		        ColorPairIdx++;				          
+			PrintOnConsole(ColorPairIdx, colorpair[ColorPairIdx].MajorColor, colorpair[ColorPairIdx].MinorColor);	
+		    ColorPairIdx++;
+				          
         }
     }
     return i * j;
@@ -47,6 +48,7 @@ int main() {
 	assert(colorpair[15].Num == 15);	
 	assert(strcmp(colorpair[15].MajorColor, "Black") == 0);
 	assert(strcmp(colorpair[15].MinorColor, "Slate") == 0);
+
     printf("All is well (Yes,it is! :> )\n");
     return 0;
 }
