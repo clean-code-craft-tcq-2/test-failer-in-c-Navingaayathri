@@ -41,10 +41,10 @@ int printColorMap() {
 int main() {
     int result = printColorMap();
     assert(result == 25);
-	assert(colorpair[23].Number == 23);	
-	assert(strcmp(colorpair[23].MajorColor, "Violet") == 0);
-	assert(strcmp(colorpair[23].MinorColor, "Green") == 0);
-	assert(colorpair[15].Number == 15);	
+	assert(colorpair[6].Num == 6);	
+	assert(strcmp(colorpair[6].MajorColor, "Red") == 0);
+	assert(strcmp(colorpair[6].MinorColor, "Blue") == 0);
+	assert(colorpair[15].Num == 15);	
 	assert(strcmp(colorpair[15].MajorColor, "Black") == 0);
 	assert(strcmp(colorpair[15].MinorColor, "Slate") == 0);
     printf("All is well (Yes,it is! :> )\n");
